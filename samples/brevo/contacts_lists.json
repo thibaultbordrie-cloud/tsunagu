@@ -1,0 +1,29 @@
+{
+ "count": 3,
+ "lists": [
+  {
+   "id": 11,
+   "name": "Newsletter FR (fictional)",
+   "folderId": 1,
+   "totalSubscribers": 562,
+   "uniqueSubscribers": 542,
+   "totalBlacklisted": 20
+  },
+  {
+   "id": 12,
+   "name": "Newsletter JP (fictional)",
+   "folderId": 1,
+   "totalSubscribers": 330,
+   "uniqueSubscribers": 314,
+   "totalBlacklisted": 16
+  },
+  {
+   "id": 13,
+   "name": "Newsletter TW (fictional)",
+   "folderId": 1,
+   "totalSubscribers": 236,
+   "uniqueSubscribers": 226,
+   "totalBlacklisted": 10
+  }
+ ]
+}

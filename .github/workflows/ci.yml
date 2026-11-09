@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+# Least privilege: the default token can only read the repository.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Tests (determinism, contract, realism, privacy, anonymity)
+        run: pytest -q
+      - name: Generate the standard world and check the contract
+        if: matrix.python == '3.12'
+        run: |
+          tsunagu generate --scenario standard --out data/tsunagu.duckdb
+          { echo '```'; tsunagu describe data/tsunagu.duckdb; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

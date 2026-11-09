@@ -1,0 +1,29 @@
+[
+  {
+    "date": "20251229",
+    "response": {
+      "status": "ready",
+      "followers": 332,
+      "targetedReaches": 314,
+      "blocks": 18
+    }
+  },
+  {
+    "date": "20251230",
+    "response": {
+      "status": "ready",
+      "followers": 333,
+      "targetedReaches": 315,
+      "blocks": 18
+    }
+  },
+  {
+    "date": "20251231",
+    "response": {
+      "status": "ready",
+      "followers": 333,
+      "targetedReaches": 315,
+      "blocks": 18
+    }
+  }
+]

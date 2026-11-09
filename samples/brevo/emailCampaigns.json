@@ -1,0 +1,125 @@
+{
+  "count": 77,
+  "campaigns": [
+    {
+      "id": 300,
+      "name": "本週推薦｜居家香氛",
+      "subject": "本週推薦｜居家香氛",
+      "type": "classic",
+      "tag": "newsletter",
+      "status": "sent",
+      "createdAt": "2025-08-30T02:00:00.000Z",
+      "sentDate": "2025-09-01T02:00:00.000Z",
+      "recipients": {
+        "lists": [
+          13
+        ]
+      },
+      "statistics": {
+        "globalStats": {
+          "sent": 139,
+          "delivered": 138,
+          "uniqueViews": 67,
+          "trackableViews": 12,
+          "appleMppOpens": 55,
+          "uniqueClicks": 1,
+          "clickers": 1,
+          "unsubscriptions": 1,
+          "hardBounces": 1,
+          "softBounces": 0,
+          "complaints": 0
+        }
+      }
+    },
+    {
+      "id": 301,
+      "name": "La lettre Lune & Lin · Livres et BD",
+      "subject": "La lettre Lune & Lin · Livres et BD",
+      "type": "classic",
+      "tag": "newsletter",
+      "status": "sent",
+      "createdAt": "2025-08-31T08:00:00.000Z",
+      "sentDate": "2025-09-02T08:00:00.000Z",
+      "recipients": {
+        "lists": [
+          11
+        ]
+      },
+      "statistics": {
+        "globalStats": {
+          "sent": 325,
+          "delivered": 321,
+          "uniqueViews": 155,
+          "trackableViews": 44,
+          "appleMppOpens": 111,
+          "uniqueClicks": 9,
+          "clickers": 6,
+          "unsubscriptions": 0,
+          "hardBounces": 4,
+          "softBounces": 0,
+          "complaints": 0
+        }
+      }
+    },
+    {
+      "id": 302,
+      "name": "今週のおすすめ：文房具",
+      "subject": "今週のおすすめ：文房具",
+      "type": "classic",
+      "tag": "newsletter",
+      "status": "sent",
+      "createdAt": "2025-09-01T03:00:00.000Z",
+      "sentDate": "2025-09-03T03:00:00.000Z",
+      "recipients": {
+        "lists": [
+          12
+        ]
+      },
+      "statistics": {
+        "globalStats": {
+          "sent": 205,
+          "delivered": 204,
+          "uniqueViews": 133,
+          "trackableViews": 26,
+          "appleMppOpens": 107,
+          "uniqueClicks": 4,
+          "clickers": 4,
+          "unsubscriptions": 0,
+          "hardBounces": 1,
+          "softBounces": 0,
+          "complaints": 0
+        }
+      }
+    },
+    {
+      "id": 303,
+      "name": "Vous nous manquez : une attention pour vous",
+      "subject": "Vous nous manquez : une attention pour vous",
+      "type": "classic",
+      "tag": "win_back",
+      "status": "sent",
+      "createdAt": "2025-09-02T08:00:00.000Z",
+      "sentDate": "2025-09-04T08:00:00.000Z",
+      "recipients": {
+        "lists": [
+          11
+        ]
+      },
+      "statistics": {
+        "globalStats": {
+          "sent": 198,
+          "delivered": 196,
+          "uniqueViews": 84,
+          "trackableViews": 20,
+          "appleMppOpens": 64,
+          "uniqueClicks": 7,
+          "clickers": 5,
+          "unsubscriptions": 0,
+          "hardBounces": 1,
+          "softBounces": 1,
+          "complaints": 0
+        }
+      }
+    }
+  ]
+}

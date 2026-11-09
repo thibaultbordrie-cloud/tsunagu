@@ -1,0 +1,92 @@
+[
+  {
+    "requestId": "77f1bb09-5010-18f4-b7c6-a51858d3c1f4",
+    "response": {
+      "overview": {
+        "requestId": "77f1bb09-5010-18f4-b7c6-a51858d3c1f4",
+        "timestamp": 1757066400,
+        "delivered": 191,
+        "uniqueImpression": 88,
+        "uniqueClick": 4,
+        "uniqueMediaPlayed": null,
+        "uniqueMediaPlayed100Percent": null
+      },
+      "messages": [
+        {
+          "seq": 1,
+          "impression": 88,
+          "mediaPlayed": null
+        }
+      ],
+      "clicks": [
+        {
+          "seq": 1,
+          "url": "https://shop.example.com/ja?utm_source=line&utm_medium=line_message&utm_campaign=jp-8-newsletter",
+          "click": 5,
+          "uniqueClick": 4,
+          "uniqueClickOfRequest": 4
+        }
+      ]
+    }
+  },
+  {
+    "requestId": "ee42d207-0586-5fbd-6c11-cb927c6393e1",
+    "response": {
+      "overview": {
+        "requestId": "ee42d207-0586-5fbd-6c11-cb927c6393e1",
+        "timestamp": 1757210400,
+        "delivered": 191,
+        "uniqueImpression": 92,
+        "uniqueClick": 9,
+        "uniqueMediaPlayed": null,
+        "uniqueMediaPlayed100Percent": null
+      },
+      "messages": [
+        {
+          "seq": 1,
+          "impression": 92,
+          "mediaPlayed": null
+        }
+      ],
+      "clicks": [
+        {
+          "seq": 1,
+          "url": "https://shop.example.com/ja?utm_source=line&utm_medium=line_message&utm_campaign=jp-10-new_arrivals",
+          "click": 15,
+          "uniqueClick": 9,
+          "uniqueClickOfRequest": 9
+        }
+      ]
+    }
+  },
+  {
+    "requestId": "9f15f3f5-1e8c-bf78-f243-b90935c89465",
+    "response": {
+      "overview": {
+        "requestId": "9f15f3f5-1e8c-bf78-f243-b90935c89465",
+        "timestamp": 1757671200,
+        "delivered": 190,
+        "uniqueImpression": 78,
+        "uniqueClick": 4,
+        "uniqueMediaPlayed": null,
+        "uniqueMediaPlayed100Percent": null
+      },
+      "messages": [
+        {
+          "seq": 1,
+          "impression": 78,
+          "mediaPlayed": null
+        }
+      ],
+      "clicks": [
+        {
+          "seq": 1,
+          "url": "https://shop.example.com/ja?utm_source=line&utm_medium=line_message&utm_campaign=jp-14-newsletter",
+          "click": 7,
+          "uniqueClick": 4,
+          "uniqueClickOfRequest": 4
+        }
+      ]
+    }
+  }
+]

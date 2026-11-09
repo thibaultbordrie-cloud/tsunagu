@@ -1,0 +1,12 @@
+# generated data: rebuild it with `tsunagu generate`
+data/
+*.duckdb
+*.duckdb.wal
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+build/
+.pytest_cache/
+.ruff_cache/

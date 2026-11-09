@@ -1,0 +1,203 @@
+{
+  "orders": [
+    {
+      "id": 267,
+      "name": "#FR1095",
+      "email": "margaux.laine.186@example.com",
+      "created_at": "2025-11-28T20:54:22+01:00",
+      "currency": "EUR",
+      "subtotal_price": "26.90",
+      "total_discounts": "4.03",
+      "total_price": "27.77",
+      "financial_status": "paid",
+      "source_name": "web",
+      "landing_site": "/fr/collections/all",
+      "referring_site": "google",
+      "customer": {
+        "id": 7400011217
+      },
+      "discount_codes": [
+        {
+          "code": "BF25FR",
+          "amount": "4.03",
+          "type": "percentage"
+        }
+      ],
+      "shipping_lines": [
+        {
+          "price": "4.90"
+        }
+      ],
+      "line_items": [
+        {
+          "id": 26701,
+          "product_id": 1031,
+          "sku": "LL-CA-01",
+          "title": "Bougie parfumée · Figue",
+          "quantity": 1,
+          "price": "26.90"
+        }
+      ]
+    },
+    {
+      "id": 271,
+      "name": "#JP1080",
+      "email": "asuka.sakamoto.1276@example.com",
+      "created_at": "2025-11-28T14:59:40+09:00",
+      "currency": "JPY",
+      "subtotal_price": "4780",
+      "total_discounts": "478",
+      "total_price": "4852",
+      "financial_status": "paid",
+      "source_name": "web",
+      "landing_site": "/ja?utm_source=email&utm_medium=email&utm_campaign=jp-100-event_teaser",
+      "referring_site": null,
+      "customer": {
+        "id": 7400005967
+      },
+      "discount_codes": [
+        {
+          "code": "BF25JP",
+          "amount": "478",
+          "type": "percentage"
+        }
+      ],
+      "shipping_lines": [
+        {
+          "price": "550"
+        }
+      ],
+      "line_items": [
+        {
+          "id": 27101,
+          "product_id": 1033,
+          "sku": "LL-CA-03",
+          "title": "アロマキャンドル・オレンジフラワー",
+          "quantity": 1,
+          "price": "4780"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "name": "#TW1022",
+      "email": "tw.member.1505@example.org",
+      "created_at": "2025-09-28T00:20:39+08:00",
+      "currency": "TWD",
+      "subtotal_price": "4060",
+      "total_discounts": "487",
+      "total_price": "3573",
+      "financial_status": "paid",
+      "source_name": "web",
+      "landing_site": "/zh?utm_source=email&utm_medium=email&utm_campaign=tw-27-event",
+      "referring_site": null,
+      "customer": {
+        "id": 7400012393
+      },
+      "discount_codes": [
+        {
+          "code": "MOON25",
+          "amount": "487",
+          "type": "percentage"
+        }
+      ],
+      "shipping_lines": [
+        {
+          "price": "0"
+        }
+      ],
+      "line_items": [
+        {
+          "id": 7201,
+          "product_id": 1050,
+          "sku": "LL-CB-05",
+          "title": "插畫食譜・第5集",
+          "quantity": 1,
+          "price": "1090"
+        },
+        {
+          "id": 7202,
+          "product_id": 1032,
+          "sku": "LL-CA-02",
+          "title": "香氛蠟燭・薰衣草",
+          "quantity": 2,
+          "price": "1090"
+        },
+        {
+          "id": 7203,
+          "product_id": 1055,
+          "sku": "LL-MU-05",
+          "title": "陶瓷馬克杯・含羞草黃",
+          "quantity": 1,
+          "price": "790"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "#TW1005",
+      "email": "tw.member.1509@example.org",
+      "created_at": "2025-09-06T13:29:00+08:00",
+      "currency": "TWD",
+      "subtotal_price": "1180",
+      "total_discounts": "0",
+      "total_price": "1300",
+      "financial_status": "paid",
+      "source_name": "web",
+      "landing_site": "/zh?utm_source=line&utm_medium=line_message&utm_campaign=tw-9-new_arrivals",
+      "referring_site": null,
+      "customer": {
+        "id": 7400006513
+      },
+      "discount_codes": [],
+      "shipping_lines": [
+        {
+          "price": "120"
+        }
+      ],
+      "line_items": [
+        {
+          "id": 1501,
+          "product_id": 1017,
+          "sku": "LL-TE-02",
+          "title": "水果紅茶・黑醋栗",
+          "quantity": 2,
+          "price": "590"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "#JP1006",
+      "email": "hideki.tanaka.746@example.com",
+      "created_at": "2025-09-07T19:08:19+09:00",
+      "currency": "JPY",
+      "subtotal_price": "2780",
+      "total_discounts": "0",
+      "total_price": "3330",
+      "financial_status": "paid",
+      "source_name": "web",
+      "landing_site": "/ja?utm_source=line&utm_medium=line_message&utm_campaign=jp-10-new_arrivals",
+      "referring_site": null,
+      "customer": {
+        "id": 7400009677
+      },
+      "discount_codes": [],
+      "shipping_lines": [
+        {
+          "price": "550"
+        }
+      ],
+      "line_items": [
+        {
+          "id": 1901,
+          "product_id": 1058,
+          "sku": "LL-TO-03",
+          "title": "リネンキッチンクロス・パウダーピンク",
+          "quantity": 1,
+          "price": "2780"
+        }
+      ]
+    }
+  ]
+}

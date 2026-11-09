@@ -1,0 +1,92 @@
+[
+  {
+    "requestId": "fece2701-2b69-268e-d9c8-cbd28728ff0e",
+    "response": {
+      "overview": {
+        "requestId": "fece2701-2b69-268e-d9c8-cbd28728ff0e",
+        "timestamp": 1756814400,
+        "delivered": 205,
+        "uniqueImpression": 88,
+        "uniqueClick": 5,
+        "uniqueMediaPlayed": null,
+        "uniqueMediaPlayed100Percent": null
+      },
+      "messages": [
+        {
+          "seq": 1,
+          "impression": 88,
+          "mediaPlayed": null
+        }
+      ],
+      "clicks": [
+        {
+          "seq": 1,
+          "url": "https://shop.example.com/zh?utm_source=line&utm_medium=line_message&utm_campaign=tw-3-newsletter",
+          "click": 6,
+          "uniqueClick": 5,
+          "uniqueClickOfRequest": 5
+        }
+      ]
+    }
+  },
+  {
+    "requestId": "dd9fbc0e-bc22-897f-fc18-5f3e104ddda3",
+    "response": {
+      "overview": {
+        "requestId": "dd9fbc0e-bc22-897f-fc18-5f3e104ddda3",
+        "timestamp": 1757131200,
+        "delivered": 210,
+        "uniqueImpression": 93,
+        "uniqueClick": 10,
+        "uniqueMediaPlayed": null,
+        "uniqueMediaPlayed100Percent": null
+      },
+      "messages": [
+        {
+          "seq": 1,
+          "impression": 93,
+          "mediaPlayed": null
+        }
+      ],
+      "clicks": [
+        {
+          "seq": 1,
+          "url": "https://shop.example.com/zh?utm_source=line&utm_medium=line_message&utm_campaign=tw-9-new_arrivals",
+          "click": 12,
+          "uniqueClick": 10,
+          "uniqueClickOfRequest": 10
+        }
+      ]
+    }
+  },
+  {
+    "requestId": "c8f1fd51-8933-39da-cc21-e97c3c86d74a",
+    "response": {
+      "overview": {
+        "requestId": "c8f1fd51-8933-39da-cc21-e97c3c86d74a",
+        "timestamp": 1757419200,
+        "delivered": 208,
+        "uniqueImpression": 87,
+        "uniqueClick": 6,
+        "uniqueMediaPlayed": null,
+        "uniqueMediaPlayed100Percent": null
+      },
+      "messages": [
+        {
+          "seq": 1,
+          "impression": 87,
+          "mediaPlayed": null
+        }
+      ],
+      "clicks": [
+        {
+          "seq": 1,
+          "url": "https://shop.example.com/zh?utm_source=line&utm_medium=line_message&utm_campaign=tw-12-newsletter",
+          "click": 9,
+          "uniqueClick": 6,
+          "uniqueClickOfRequest": 6
+        }
+      ]
+    }
+  }
+]

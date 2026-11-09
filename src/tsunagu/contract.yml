@@ -1,0 +1,143 @@
+# Data contract for the generated warehouse.
+# Checked by `tsunagu validate`. Any change to the generator that breaks a promise below fails CI.
+# Types: integer, number, string, boolean, date, timestamp.
+
+version: 1
+tables:
+  ref.products:
+    primary_key: [product_id]
+    columns:
+      product_id: {type: integer, not_null: true}
+      sku: {type: string, not_null: true, unique: true, pattern: "^LL-[A-Z]{2}-[0-9]{2}$"}
+      category: {type: string, accepted: [stationery, tea, home, books, table]}
+      price_eur: {type: number, min: 1}
+      price_jpy: {type: number, min: 100}
+      price_twd: {type: number, min: 10}
+
+  ref.calendar_events:
+    columns:
+      market: {type: string, accepted: [FR, JP, TW]}
+      kind: {type: string, accepted: [commercial, public_holiday]}
+      start_date: {type: date, not_null: true}
+      end_date: {type: date, not_null: true}
+      demand_uplift: {type: number, min: 0.3, max: 3}
+    checks:
+      - "end_date >= start_date"
+
+  raw_shop.customers:
+    primary_key: [id]
+    columns:
+      id: {type: integer, not_null: true}
+      email: {type: string, not_null: true, unique: true, pattern: "^[a-z0-9._+-]+@example\\.(com|org)$"}
+      country_code: {type: string, accepted: [FR, JP, TW]}
+      created_at: {type: timestamp, not_null: true}
+      accepts_marketing: {type: boolean, not_null: true}
+
+  raw_shop.orders:
+    primary_key: [id]
+    columns:
+      id: {type: integer, not_null: true}
+      name: {type: string, not_null: true, unique: true}
+      customer_id: {type: integer, not_null: true}
+      currency: {type: string, accepted: [EUR, JPY, TWD]}
+      created_at: {type: timestamp, not_null: true}
+      subtotal_price: {type: number, min: 0}
+      total_discounts: {type: number, min: 0}
+      shipping_price: {type: number, min: 0}
+      total_price: {type: number, min: 0}
+      financial_status: {type: string, accepted: [paid, refunded, partially_refunded]}
+    references:
+      customer_id: raw_shop.customers.id
+    checks:
+      - "abs(subtotal_price - total_discounts + shipping_price - total_price) < 0.011"
+      - "(currency = 'EUR' and country_code = 'FR') or (currency = 'JPY' and country_code = 'JP') or (currency = 'TWD' and country_code = 'TW')"
+
+  raw_shop.order_line_items:
+    primary_key: [order_id, line_no]
+    columns:
+      quantity: {type: integer, min: 1, max: 20}
+      price: {type: number, min: 0}
+    references:
+      order_id: raw_shop.orders.id
+      product_id: ref.products.product_id
+
+  raw_email.contacts:
+    primary_key: [id]
+    columns:
+      id: {type: integer, not_null: true}
+      email: {type: string, not_null: true}
+      email_blacklisted: {type: boolean, not_null: true}
+    references:
+      list_id: raw_email.lists.id
+
+  raw_email.campaigns:
+    primary_key: [id]
+    columns:
+      sent: {type: integer, min: 0}
+      delivered: {type: integer, min: 0}
+    references:
+      list_id: raw_email.lists.id
+    checks:
+      - "delivered <= sent"
+      - "unique_views = trackable_views + apple_mpp_opens"
+      - "unique_views <= delivered"
+      - "clickers <= trackable_views"
+      - "unique_clicks >= clickers"
+      - "sent = delivered + hard_bounces + soft_bounces"
+
+  raw_email.events:
+    columns:
+      event: {type: string, accepted: [delivered, opened, clicked, unsubscribed, hard_bounce, soft_bounce, spam]}
+      event_at: {type: timestamp, not_null: true}
+    references:
+      campaign_id: raw_email.campaigns.id
+
+  raw_line.message_insights:
+    primary_key: [request_id]
+    columns:
+      account: {type: string, accepted: [JP, TW]}
+    checks:
+      - "unique_impression <= delivered"
+      - "unique_click <= unique_impression"
+
+  raw_line.followers_daily:
+    primary_key: [account, date]
+    checks:
+      - "targeted_reaches + blocks = followers"
+
+  raw_line.login_links:
+    primary_key: [line_user_id]
+    references:
+      shop_customer_id: raw_shop.customers.id
+
+  raw_crm.campaign_plan:
+    primary_key: [campaign_id]
+    columns:
+      channel: {type: string, accepted: [email, line]}
+      theme: {type: string, accepted: [newsletter, new_arrivals, win_back, event, event_teaser, event_last_call]}
+      send_at_utc: {type: timestamp, not_null: true}
+    checks:
+      - "(channel = 'email') = (email_campaign_id is not null)"
+      - "(channel = 'line') = (line_request_id is not null)"
+
+  raw_crm.holdouts:
+    references:
+      campaign_id: raw_crm.campaign_plan.campaign_id
+
+  truth.orders:
+    primary_key: [order_id]
+    columns:
+      cause: {type: string, accepted: [organic, campaign_incremental]}
+    references:
+      order_id: raw_shop.orders.id
+    checks:
+      - "(cause = 'campaign_incremental') = (causing_campaign_id is not null)"
+
+  truth.audience:
+    primary_key: [campaign_id, customer_id]
+    references:
+      campaign_id: raw_crm.campaign_plan.campaign_id
+      customer_id: truth.customers.customer_id
+    checks:
+      - "not (is_holdout and (delivered or clicked or human_open))"
+      - "not (clicked and not (human_open or is_holdout))"
