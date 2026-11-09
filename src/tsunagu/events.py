@@ -69,7 +69,7 @@ def _first_day(hol: holidays.HolidayBase, name: str, year: int) -> dt.date:
 def commercial_events(year: int) -> list[Event]:
     d, td = dt.date, dt.timedelta
     yy = str(year)[2:]
-    tw = holidays.TW(years=year)
+    tw = holidays.TW(years=year, language=holidays.TW.default_language)
     cny = _first_day(tw, "春節", year)
     mid_autumn = _first_day(tw, "中秋節", year)
     bf = _black_friday(year)
@@ -122,7 +122,8 @@ def commercial_events(year: int) -> list[Event]:
 def public_holidays(year: int) -> list[Event]:
     out = []
     for market, cls in (("FR", holidays.FR), ("JP", holidays.JP), ("TW", holidays.TW)):
-        local = cls(years=year)
+        # name the language: otherwise gettext follows the machine locale (LANG=C.UTF-8 on CI)
+        local = cls(years=year, language=cls.default_language)
         english = cls(years=year, language="en_US")
         for day, name in sorted(local.items()):
             out.append(Event(market, "public_holiday", name, english.get(day, name), "public_holiday", day, day, 1.0))

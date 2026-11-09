@@ -64,3 +64,10 @@ def test_demand_peaks_on_double_11():
     peak, code = demand_index("TW", dt.date(2025, 11, 11), ev)
     normal, _ = demand_index("TW", dt.date(2025, 10, 8), ev)
     assert code == "double_11" and peak > 2 * normal
+
+
+def test_local_names_do_not_depend_on_the_machine_locale(monkeypatch):
+    for var in ("LANG", "LC_ALL", "LC_MESSAGES", "LANGUAGE"):
+        monkeypatch.setenv(var, "C.UTF-8")
+    tw = [e for e in public_holidays(2026) if e.market == "TW"]
+    assert any(e.name_local == "春節" for e in tw)
