@@ -39,7 +39,7 @@ def parse_overrides(pairs: list[str], base: Scenario) -> dict:
 
 def _generate(args) -> int:
     from .contract import validate
-    from .exporters import api_json, duckdb_out
+    from .exporters import api_json, duckdb_out, salesforce
     from .simulate import run
 
     sc = SCENARIOS[args.scenario]
@@ -64,6 +64,9 @@ def _generate(args) -> int:
     if args.api:
         for name, n in api_json.write(res, args.api).items():
             print(f"  api/{name:<26} {n:>10,}")
+    if args.salesforce:
+        for name, n in salesforce.write(res, args.salesforce).items():
+            print(f"  salesforce/{name:<19} {n:>10,}")
     breaches = validate(args.out)
     print("Contract: OK" if not breaches else "Contract: BROKEN")
     for b in breaches:
@@ -115,6 +118,7 @@ def main(argv=None) -> int:
     g.add_argument("--end", help="YYYY-MM-DD")
     g.add_argument("--out", default="data/tsunagu.duckdb")
     g.add_argument("--api", help="also write API-shaped JSON samples to this folder")
+    g.add_argument("--salesforce", help="also write a small Sales Cloud load (CSV per object) to this folder")
     g.add_argument("--set", action="append", metavar="PARAM=VALUE",
                    help="change one parameter of config.py, e.g. --set holdout_rate=0.5 (repeatable)")
     g.set_defaults(func=_generate)

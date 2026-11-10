@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
 ![DuckDB](https://img.shields.io/badge/DuckDB-warehouse-FFF000?logo=duckdb&logoColor=black)
 ![LINE](https://img.shields.io/badge/LINE-Messaging%20API%20shapes-06C755?logo=line&logoColor=white)
+![Salesforce](https://img.shields.io/badge/Salesforce-CSV%20load-00A1E0)
 ![Data](https://img.shields.io/badge/data-100%25%20fictional-lightgrey)
 ![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)
 
@@ -89,6 +90,8 @@ flowchart LR
 | `truth` | hidden traits, every message to every person, why each order happened, all parameters | **answer key, never for building** |
 
 `--api` also writes the same data as API responses (`emailCampaigns`, `insight/message/event`, `insight/followers`, `orders.json`) so a connector can be built and tested offline. Shapes follow the public docs, simplified. Details: [docs/DATA_MODEL.md](docs/DATA_MODEL.md).
+
+`--salesforce` writes a small Sales Cloud load: Contact, Campaign, CampaignMember and Product2 as CSV, linked by external IDs, with identities resolved and a sample sized for a free Developer Edition. Steps and limits: [docs/SALESFORCE.md](docs/SALESFORCE.md).
 
 ## What the simulation reproduces
 
